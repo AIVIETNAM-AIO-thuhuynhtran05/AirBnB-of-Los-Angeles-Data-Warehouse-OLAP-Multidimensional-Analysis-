@@ -1,0 +1,6 @@
+# Visual Studio / SSDT user and build files
+.vs/
+bin/
+obj/
+*.user
+*.suo

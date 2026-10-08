@@ -93,41 +93,45 @@ Quy trình được thiết kế chặt chẽ đảm bảo tính toàn vẹn d�
 
 ---
 
-##  Cấu trúc thư mục Project
+## 📁 Cấu trúc thư mục Project
+
+Các thư mục được đánh số theo đúng thứ tự của pipeline, từ dữ liệu đầu vào đến phân tích:
 
 ```
-AirbnbLA2025/
-├── Data/                          # Dữ liệu thô (.csv)
-│   └── listings_ready_change_01.csv
-├── SQL_Scripts/                   # Scripts SQL
-│   ├── CreateDatabase.sql
-│   ├── CreateTables.sql
-│   ├── CreateConstraints.sql
-│   └── DataValidation.sql
-├── SSIS_Project/                  # Visual Studio Solution
-│   ├── AirbnbLA.sln
-│   ├── Packages/
-│   │   └── Main_ETL_Package.dtsx
-│   └── Configurations/
-│       └── Config.dtsconfig
-├── DataMining/                    # Python notebooks & scripts
-│   ├── 1_Logistic_Regression.ipynb
-│   ├── 2_RandomForest.ipynb
-│   ├── 3_XGBoost.ipynb
-│   ├── 4_OLAP_Analysis.ipynb
-│   └── results/
-│       ├── model_comparison.csv
-│       └── feature_importance.csv
-├── SSAS_Models/                   # SSAS Cube & MDX
-│   ├── AirbnbLA.asdatabase
-│   └── Queries/
-│       └── sample_queries.mdx
-├── Documentation/
-│   ├── SSIS_BAOCAO.docx
-│   ├── DataMining_Report.docx
-│   └── SSAS_OLAP_Guide.docx
-└── README.md                      # Hướng dẫn này
+├── 01_data/
+│   └── listings_ready_change.csv     # Dữ liệu đã qua EDA và chuyển đổi (11,996 listings, 27 cột)
+├── 02_data_warehouse_sql/
+│   └── SQL_AIRBNB.sql                # Tạo database, bảng Fact & Dimension (Star Schema)
+├── 03_etl_ssis/                      # SSIS project: nạp dữ liệu vào Data Warehouse
+│   ├── AirBnB.sln
+│   └── AirBnB/
+│       ├── Package.dtsx              # Luồng ETL chính (Sort, Merge Join, Derived Column, Multicast)
+│       ├── AirBnB.dtproj
+│       ├── AirBnB.database
+│       └── Project.params
+├── 04_olap_ssas/                     # SSAS project: Cube OLAP đa chiều
+│   ├── SSAS_AIRBNB.sln
+│   └── SSAS_AIRBNB/
+│       ├── Final.cube                # Cube chính
+│       ├── Dim Host Final.dim        # Dimension: Host
+│       ├── Dim Location.dim          # Dimension: Location
+│       ├── Dim Room Type.dim         # Dimension: Room Type
+│       ├── Dim Time.dim              # Dimension: Time
+│       ├── Final.ds / Final.dsv      # Data source & data source view
+│       └── ...
+├── 05_powerbi/
+│   └── PowerBI_OLAP.pbix             # Báo cáo Power BI kết nối OLAP
+├── 06_data_mining/                   # Kết quả notebook (xuất PDF từ Google Colab)
+│   ├── 01_Logistic_Regression.pdf
+│   ├── 02_Random_Forest.pdf
+│   ├── 03_XGBoost.pdf
+│   └── 04_OLAP_Analysis.pdf
+├── docs/
+│   └── IS217_23521535_23520537.docx  # Báo cáo đồ án
+└── README.md
 ```
+
+> **Lưu ý:** `listings_ready_change.csv` là dữ liệu **sau khi đã EDA và chuyển đổi** từ dữ liệu gốc của [Inside Airbnb](http://insideairbnb.com/), sẵn sàng để nạp vào Data Warehouse qua SSIS.
 
 ---
 
@@ -406,17 +410,13 @@ Sử dụng Power BI hoặc SQL Server Reporting Services:
 
 ## 📖 Hướng Dẫn Sử Dụng
 
-### Chạy Data Mining Models:
+### Thứ tự chạy project:
 
-```bash
-# Cài đặt dependencies
-pip install pandas numpy scikit-learn xgboost matplotlib seaborn
-
-# Chạy notebooks
-jupyter notebook 1_Logistic_Regression.ipynb
-jupyter notebook 2_RandomForest.ipynb
-jupyter notebook 3_XGBoost.ipynb
-```
+1. **Data Warehouse:** chạy `02_data_warehouse_sql/SQL_AIRBNB.sql` trên SQL Server để tạo database và các bảng.
+2. **ETL:** mở `03_etl_ssis/AirBnB.sln` bằng Visual Studio (SSIS), chỉnh connection về SQL Server của bạn, trỏ Flat File Source tới `01_data/listings_ready_change.csv`, rồi chạy `Package.dtsx`.
+3. **OLAP:** mở `04_olap_ssas/SSAS_AIRBNB.sln` bằng Visual Studio (SSAS), cập nhật data source, rồi Deploy và Process cube.
+4. **Báo cáo:** mở `05_powerbi/PowerBI_OLAP.pbix` bằng Power BI Desktop.
+5. **Data Mining:** xem kết quả các mô hình trong thư mục `06_data_mining/`.
 
 ### Sử Dụng SSAS Queries:
 

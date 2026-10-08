@@ -1,0 +1,200 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="cdb5e828-5c89-4228-a68d-75fbacb91227" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Room Type</ID>
+  <Name>Dim Room Type</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="d36a33cc-2464-40d2-bb4a-a74f788e6084">
+    <DataSourceViewID>Final</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="3c0d26a3-3cb2-4ef0-8e81-ca1218e8c046">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="d37e4aa7-3eb5-4cf1-b177-8296dd22dfeb">
+      <ID>Room Id</ID>
+      <Name>Room Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2d8a4972-7434-4dac-ab45-c879114421a4">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="41a8b9bb-d6ee-4197-b39a-87ece4d884c5">
+            <TableID>dbo_Dim_RoomType</TableID>
+            <ColumnID>room_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="bc22324e-8b5e-4199-8807-f2cbdca32bff">
+          <AttributeID>Room Type</AttributeID>
+          <Name>Room Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="270be165-57cb-473c-b797-bd28c34ede53">
+          <AttributeID>Accommodates</AttributeID>
+          <Name>Accommodates</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f546f31f-b464-4277-940d-81ef006cc6ae">
+          <AttributeID>Bathrooms</AttributeID>
+          <Name>Bathrooms</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7c317289-5024-467d-8eeb-a5de3baa522e">
+          <AttributeID>Bedrooms</AttributeID>
+          <Name>Bedrooms</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a8bea944-3e9c-4e9d-b15e-b334bd2ee630">
+          <AttributeID>Beds</AttributeID>
+          <Name>Beds</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="95f20e1e-2367-41a0-a67e-bb21f722e69a">
+          <AttributeID>Property Type</AttributeID>
+          <Name>Property Type</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bf708203-8c5a-4ebe-8d24-c2ddc8c3a74b">
+      <ID>Room Type</ID>
+      <Name>Room Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cbc439f9-46ea-471d-bbfa-571f77a9baf7">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="23ebc5e7-0fcb-41b2-9248-e4e225452045">
+            <TableID>dbo_Dim_RoomType</TableID>
+            <ColumnID>room_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="215ddb22-11dc-41c9-8597-7e771821a4de">
+      <ID>Accommodates</ID>
+      <Name>Accommodates</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="59b400e0-44e4-4837-82bb-b320f736f3ce">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="56efd955-7c83-47b5-820a-d110f1522937">
+            <TableID>dbo_Dim_RoomType</TableID>
+            <ColumnID>accommodates</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c7a142ba-9d67-4c3f-b973-f3dce0ec24e4">
+      <ID>Bathrooms</ID>
+      <Name>Bathrooms</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="35a5dc1f-ab64-4557-b3e2-ac25eef2fb16">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a478ae7c-1bea-4e06-8b71-d180acd1adcf">
+            <TableID>dbo_Dim_RoomType</TableID>
+            <ColumnID>bathrooms</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="80e02e39-e6a2-460c-9e73-58e6bd6c4f72">
+      <ID>Bedrooms</ID>
+      <Name>Bedrooms</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="10bac84c-5435-48cb-b8d6-62c938d6c58a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3f46db2a-cef2-4f90-9143-b0af4692e372">
+            <TableID>dbo_Dim_RoomType</TableID>
+            <ColumnID>bedrooms</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="85527424-be5c-4800-8271-8e5c8324c7b6">
+      <ID>Beds</ID>
+      <Name>Beds</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1fd5294d-66ca-4d60-a1a0-c0a607c3b73a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a50cb177-ef8f-45a1-b388-a6a077f1ef08">
+            <TableID>dbo_Dim_RoomType</TableID>
+            <ColumnID>beds</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="24a0c4e6-4c2c-4cd8-a9bc-acebaefef896">
+      <ID>Property Type</ID>
+      <Name>Property Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8929c8bf-4921-4e08-85d6-350fdb78ada6">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5404c324-bdd1-4ef1-948e-5ec06f06629d">
+            <TableID>dbo_Dim_RoomType</TableID>
+            <ColumnID>property_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

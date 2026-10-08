@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SSAS_AIRBNB", "SSAS_AIRBNB\SSAS_AIRBNB.dwproj", "{5C363817-1345-69DF-CD8E-837E6B4817DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C363817-1345-69DF-CD8E-837E6B4817DF}.Development|Default.ActiveCfg = Development
+		{5C363817-1345-69DF-CD8E-837E6B4817DF}.Development|Default.Build.0 = Development
+		{5C363817-1345-69DF-CD8E-837E6B4817DF}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {227A64A5-1347-4222-9B05-A7FE97DA2AD0}
+	EndGlobalSection
+EndGlobal
